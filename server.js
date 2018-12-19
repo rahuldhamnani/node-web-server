@@ -62,6 +62,12 @@ app.get('/about', (req, res)=> { //Adding a handler for About page
   });
 });
 
+app.get('/projects', (req, res)=> { //Adding a handler for About page
+  res.render('projects.hbs', {
+    pageTitle: 'Project Page'
+  });
+});
+
 app.get('/bad', (req, res)=> { //Adding a handler for About bad
   res.send({
     errorMessage: 'Unable to handle request',
@@ -70,5 +76,5 @@ app.get('/bad', (req, res)=> { //Adding a handler for About bad
 });
 
 app.listen(port, ()=>{ // Can take second optional argument to let developer know that the server started
-  console.log('Server is up and running at port 3000');
+  console.log(`Server is up and running at port ${port}`);
 });

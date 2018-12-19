@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 // set is a method to set various configuration properties for Express.
@@ -67,6 +69,6 @@ app.get('/bad', (req, res)=> { //Adding a handler for About bad
   });
 });
 
-app.listen(3000, ()=>{ // Can take second optional argument to let developer know that the server started
+app.listen(port, ()=>{ // Can take second optional argument to let developer know that the server started
   console.log('Server is up and running at port 3000');
 });
